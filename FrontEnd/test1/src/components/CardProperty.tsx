@@ -1,15 +1,15 @@
-import { Box, Container, Grid, Paper, Stack, styled } from "@mui/material"
+import { Grid } from "@mui/material"
 import "../styles/Field.css"
 
-type Props = {
+type Props<T> = {
   name: string,
   valueType: string,
-  value: any
+  value: T
   editable: boolean
 }
 
 
-function Field(props: Props) {
+function CardProperty(props: Props<any>) {
   return (
     <div className="field">
 
@@ -30,7 +30,7 @@ function Field(props: Props) {
   )
 }
 
-export default Field
+export default CardProperty
 
 /*
       <Container>
