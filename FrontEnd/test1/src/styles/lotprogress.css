@@ -1,3 +1,7 @@
 .lot-progress-root {
   padding: 10px 0px;
 }
+
+.green-bar {
+  display: inline-block;
+}

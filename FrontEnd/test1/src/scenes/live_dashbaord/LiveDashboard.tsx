@@ -28,9 +28,12 @@ function VerticalGrid() {
       </div>
 
       {/* vertical lines */}
-      <div className='flex bg-black-100 justify-around'>
+      <div className='flex bg-black-100 justify-around min-h-full'>
         {totalStages.map(stage => (
-          <div key={stage} className='bg-slate-300 mx-4 w-px h-full top-6 min-h-screen'></div>
+          <div key={stage} className='bg-slate-300 mx-4 w-px h-full top-6'
+            style={{ minHeight: 'calc(100vh - 11rem)' }}
+          // style={{ minHeight: '80vh' }}
+          ></div>
         ))}
       </div>
 
@@ -44,7 +47,9 @@ function LiveDashboard() {
       <Typography variant='h3' className='text-center' > Live Dashboard </Typography>
 
 
-      <div className='z-0 relative dashboard-root min-h-screen'>
+      <div className='z-0 relative dashboard-root'
+        style={{ minHeight: 'calc(100vh - 10rem)' }}
+      >
 
         <VerticalGrid />
 

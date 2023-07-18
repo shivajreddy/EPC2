@@ -3,7 +3,7 @@
   border: 1px solid gray;
 
   /* 4rem-top and bottom margin, 2px-top and bottom border */
-  min-height: calc(100vh - 4rem - 2px);
+  min-height: calc(100vh - 7rem);
 
   min-width: 90vw;
 
