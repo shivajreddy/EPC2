@@ -1,15 +1,14 @@
-.live-dashboard-root {
+.live-dashboard-page {
   margin: 2rem;
   border: 1px solid gray;
 
   /* 4rem-top and bottom margin, 2px-top and bottom border */
   min-height: calc(100vh - 4rem - 2px);
+
+  min-width: 90vw;
+
 }
 
-/* .parent { */
-/* display: flex; */
-/* } */
-
-/* .child { */
-/* flex: 1; */
-/* } */
+.dashboard-root {
+  border: 1px solid red;
+}
