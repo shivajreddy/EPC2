@@ -1,5 +1,6 @@
 import '../../styles/lotprogress.css'
 import Dot from './Dot'
+import GreenBar from './GreenBar'
 import LotNumber from './LotNumber'
 
 
@@ -20,7 +21,6 @@ function LotProgress(props: Props) {
       <div className='bg-slate-500 w-full h-px'></div>
 
       {/* dots */}
-      {/* <div className='flex justify-around inset-x-0 top-0'> */}
       <div className='flex justify-around relative'
         style={{
           top: '-6px'
@@ -32,9 +32,7 @@ function LotProgress(props: Props) {
 
       </div>
 
-      <div>
-        green bar
-      </div>
+      <GreenBar />
 
     </div>
   )

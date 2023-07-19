@@ -1,5 +1,43 @@
+.lot-progress {}
+
 .lot-progress-root {
-  padding: 10px 0px;
+  margin-left: calc(3rem - 6px);
+  margin-right: calc(3rem - 6px);
+
+  position: relative;
+  /* border: 1px solid red; */
+
+  display: flex;
+  min-height: 24px;
+
+  align-items: center;
+}
+
+.lot-progress-line {
+  position: relative;
+  z-index: 1;
+
+  height: 1px;
+  width: 100%;
+  /* background-color: black; */
+
+}
+
+.lot-progress-green-bar {
+  position: absolute;
+  z-index: 2;
+
+  height: 6px;
+}
+
+.lot-progress-symbols {
+  position: absolute;
+  z-index: 3;
+
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
 }
 
 .green-bar {
