@@ -1,4 +1,4 @@
-import '../../styles/verticalgrid.css'
+import '../../styles/basegrid.css'
 
 const totalStages = [
   "Start",
@@ -12,11 +12,11 @@ const totalStages = [
 ]
 
 
-function VerticalGrid() {
+function BaseGrid() {
   return (
-    <div className="vertical-grid">
+    <div className="base-grid">
 
-      <div className="titles">
+      <div className="titles flex justify-between">
 
         {totalStages.map(stage => (
           <p key={stage} className='title'>{stage}</p>
@@ -34,4 +34,4 @@ function VerticalGrid() {
   )
 }
 
-export default VerticalGrid
+export default BaseGrid

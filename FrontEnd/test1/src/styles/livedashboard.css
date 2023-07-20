@@ -1,14 +1,43 @@
 .live-dashboard-page {
-  margin: 2rem;
-  /* border: 1px solid gray; */
 
-  /* 4rem-top and bottom margin, 2px-top and bottom border */
-  min-height: calc(100vh - 7rem);
+  /* VARIABLES */
+  --page-width: 100vw;
+  --page-height: 100%;
+  --page-title-height: 3rem;
+  --titles-height: 4rem;
+  --base-grid-x-offset: 6rem;
+  --base-grid-width: calc(100% - var(--base-grid-x-offset));
+  --title-max-width: 6rem;
 
-  min-width: 90vw;
+  width: var(--page-width);
 
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  border: 6px dashed black;
+}
+
+.page-title {
+  height: var(--page-title-height);
+  font-size: 24px;
+  text-align: center;
+
+  border: 4px dashed red;
 }
 
 .dashboard-root {
-  /* border: 1px solid red; */
+  /* height: 100%; */
+  /* position: relative; */
+  position: absolute;
+  /* position: sticky; */
+
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  /* border: 4px dashed purple; */
 }
+
+.all-lots-root {}

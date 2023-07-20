@@ -1,7 +1,7 @@
-import { Typography } from '@mui/material'
 import '../../styles/livedashboard.css'
+import BaseGrid from './BaseGrid'
+import LotProgress from './LotProgress'
 import LotProgress2 from './LotProgress2'
-import VerticalGrid from './VerticalGrid'
 
 
 const totalStages = [
@@ -19,22 +19,30 @@ const totalStages = [
 function LiveDashboard() {
   return (
     <div className="live-dashboard-page">
-      <Typography variant='h3' className='text-center' > Live Dashboard </Typography>
+      <p className='page-title'>Live Dashboard</p>
 
 
-      <div className='z-0 relative dashboard-root'
+      <div className='z-0 dashboard-root'
         style={{ minHeight: 'calc(100vh - 10rem)' }}
       >
 
-        <VerticalGrid />
+        <BaseGrid />
 
         <div className='all-lots-root z-20 absolute top-20 min-w-full'>
 
-          {/* <LotProgress data={{ lot_id: "Lot-30-05-PV" }} />
-          <LotProgress data={{ lot_id: "Lot-29-04-RB" }} />
-          <LotProgress data={{ lot_id: "Lot-27-05-PV" }} /> */}
-
           <LotProgress2 stage={1} />
+          <LotProgress2 stage={1} />
+          <LotProgress2 stage={1} />
+          <LotProgress2 stage={1} />
+          <LotProgress2 stage={1} />
+          <LotProgress2 stage={1} />
+
+          <LotProgress data={{ lot_id: "Lot-29-04-RB" }} />
+          <LotProgress data={{ lot_id: "Lot-27-05-PV" }} />
+          <LotProgress data={{ lot_id: "Lot-29-04-RB" }} />
+          <LotProgress data={{ lot_id: "Lot-27-05-PV" }} />
+          <LotProgress data={{ lot_id: "Lot-29-04-RB" }} />
+          <LotProgress data={{ lot_id: "Lot-27-05-PV" }} />
 
         </div>
 
