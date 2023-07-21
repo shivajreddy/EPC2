@@ -1,66 +1,34 @@
-.base-grid {
-  width: var(--base-grid-width);
-  height: 100%;
-
-  /* position: fixed; */
-  /* position: absolute; */
-  /* top: var(--titles-height); */
-
-
-  /* position: sticky; */
-  position: relative;
-  top: var(--page-title-height);
-  /* top: 0; */
-  /* bottom: 0; */
-  left: calc(var(--base-grid-x-offset) / 2);
-
-  border: 4px solid green;
-}
-
-.titles {
-  width: 100%;
-  height: var(--titles-height);
-
-  position: -webkit-sticky;
-  position: sticky;
-  /* position: fixed; */
-  /* top: var(--page-title-height); */
-  top: 0;
-  /* bottom: 0; */
-  /* left: calc(var(--base-grid-x-offset) / 2); */
-
-  /* margin-top: var(--page-title-height); */
-
-  border: 4px solid yellow;
-}
-
-
-.title {
-  width: var(--title-max-width);
-
-  text-align: center;
-  align-self: flex-end;
-
-  /* border: 1px solid blue; */
-}
-
-
 /* TODO a --------------------- */
 .vertical-lines-root {
+  display: flex;
+  /* justify-content: space-between; */
+  justify-content: space-around;
+
+  /* height: 100%; */
+
+  width: var(--base-grid-width);
+  left: calc(var(--base-grid-x-offset) / 2);
+  position: sticky;
+  /* position: absolute; */
+  /* top: 0; */
+  /* top: 10px; */
+  top: var(--grid-titles-height);
+  /* bottom: 0 !important; */
+
   /* height: calc(100% - 3rem); */
   /* height: 100%; */
   /* width: inherit; */
 
   /* position: fixed; */
-  position: absolute;
+  /* position: absolute; */
   /* position: relative; */
-  top: 0;
-  bottom: 0;
-  top: calc(var(--page-title-height) + var(--titles-height));
+  /* top: 0; */
+  /* bottom: 0; */
+  /* width: 100%; */
+  /* pointer-events: none; */
+  /* top: calc(var(--page-title-height) + var(--titles-height)); */
   /* height: 100%; */
 
-  display: flex;
-  justify-content: space-between;
 
   /* margin-left: 3rem; */
   /* margin-right: 3rem; */

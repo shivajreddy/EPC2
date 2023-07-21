@@ -1,8 +1,17 @@
-.lot-progress {}
+.lot-progress {
+  position: relative;
+  left: -5px;
+  width: calc(100% + 10px);
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  /* border: 2px solid salmon; */
+}
 
 .lot-progress-root {
-  margin-left: calc(3rem - 6px);
-  margin-right: calc(3rem - 6px);
+  /* margin-left: calc(3rem - 6px); */
+  /* margin-right: calc(3rem - 6px); */
 
   position: relative;
   /* border: 1px solid red; */
@@ -11,6 +20,7 @@
   min-height: 24px;
 
   align-items: center;
+  /a* border: 2px solid salmon; */
 }
 
 .lot-progress-line {
@@ -42,4 +52,17 @@
 
 .green-bar {
   display: inline-block;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-checkmark {
+  position: relative;
+  top: -5px;
 }

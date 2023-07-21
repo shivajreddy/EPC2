@@ -11,26 +11,25 @@ const totalStages = [
   "Finish"
 ]
 
+const totalStagesCount = 8;
 
 function BaseGrid() {
   return (
-    <div className="base-grid">
-
-      <div className="titles flex justify-between">
-
-        {totalStages.map(stage => (
-          <p key={stage} className='title'>{stage}</p>
-        ))}
-
-      </div>
-
+    <>
       <div className="vertical-lines-root">
+        {
+          Array.from({ length: totalStagesCount }).map((_, index) => (
+            <div key={index} className="w-px bg-slate-200">{index}</div>
+          ))
+        }
+        {/* 
         {totalStages.map(stage => (
-          <div key={stage} className="w-px bg-slate-200"></div>
-        ))}
+          <div key={stage} className="w-px bg-slate-200">{1}</div>
+        ))} */}
       </div>
 
-    </div>
+    </>
+
   )
 }
 
