@@ -5,6 +5,7 @@ import App from './App'
 import './index.css'
 import LiveDashboardOld from './scenes/live_dashbaord/LiveDashboardOld'
 import LiveDashboard from './scenes/live_dashbaord/LiveDashboard'
+import Lab from './components/Lab'
 
 
 
@@ -17,7 +18,12 @@ const router = createBrowserRouter([
   {
     path: "/live",
     element: <LiveDashboard />
-  }
+  },
+  {
+    path: "/lab",
+    element: <Lab />
+  },
+
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(

@@ -1,10 +1,15 @@
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+import App from './scenes/App.tsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Page1 from './scenes/Page1.tsx'
 import "./input.css"
+import Lab from './scenes/Lab.tsx'
+
+
 
 const Index = () => {
+
+
   const router = createBrowserRouter([
     {
       path: "/",
@@ -13,6 +18,10 @@ const Index = () => {
     {
       path: "/1",
       element: <Page1 />
+    },
+    {
+      path: "/lab",
+      element: <Lab />
     },
   ]);
 

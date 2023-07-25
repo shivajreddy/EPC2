@@ -1,53 +1,85 @@
+import { useState } from "react"
 
-// type Props = {}
+const Item = () => {
+  const [isExpanded, setIsExpanded] = useState<boolean>(false)
 
-import { convertLength } from "@mui/material/styles/cssUtils";
-import axios from "axios";
-import { useEffect, useState } from "react";
-
-type Section = {
-  _id: string
-  title: string,
-  name: string,
-  contract_date: string,
-  editable: boolean,
+  return (
+    <div className="border-2 bg-slate-400" onClick={() => setIsExpanded(!isExpanded)} style={{ cursor: "pointer" }}>
+      {
+        isExpanded &&
+        <div>
+          <h3> this is extra info for card</h3>
+        </div>
+      }
+      <p >lot xx-xx-xx</p>
+      <p>bar</p>
+    </div>
+  )
 }
-
-const server_uri = "http://localhost:7812/test2"
-
 
 
 function Lab() {
 
-  const [data, setData] = useState<Section>();
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(server_uri)
-      console.log("response.data=", response.data[0]);
-      setData(response.data[0])
-    } catch (error) {
-      console.error(error);
-    }
-  };
+  const [activeId, setActiveId] = useState<number | null>();
 
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  let convertedDate = '';
-  if (data !== undefined) {
-    console.log("data = ", data)
-    convertedDate = data.contract_date.split(' ')[0]; // Extract date part
-    console.log("converteddate=", convertedDate, typeof (convertedDate))
+  const handleClick = (id: number) => {
+    setActiveId(id);
   }
+
+  const handleOutsideClick = () => {
+    setActiveId(null);
+  }
+
 
   return (
     <div>
-      <h3>Lab</h3>
-      <input type="date" value={convertedDate} disabled={true} />
+      <p>test expand comp</p>
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </div>
   )
 }
 
 export default Lab
+
+/*
+import * as React from 'react';
+import './style.css';
+
+interface Card {
+  id: number;
+  url: string;
+  title: string;
+};
+
+interface Props {
+  data: Array<Card>;
+};
+
+const ExpandingCards = ({data}: Props) => {
+  const [activeId, setActiveId] = React.useState<number>(1)
+
+  const onClick = (id: number) => setActiveId(id);
+
+  return (
+    <div class="container">
+      {
+        data.map(card => (
+          <div
+            key={card.id}
+            class={`panel ${activeId === card.id ? 'active' : ''}`}
+            onClick={() => onClick(card.id)}
+            style={{ backgroundImage: `url(${card.url})` }}>
+            <h3>{card.title}</h3>
+          </div>
+        ))
+      }
+    </div>
+  )
+}
+
+export default ExpandingCards;
+*/
