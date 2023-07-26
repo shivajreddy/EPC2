@@ -1,33 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ThemeToggleSwitch from "./ThemeToggleSwitch";
+
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <p className="color-primary">lab2</p>
+      <p className="bg-skin-fill">lab2</p>
+      <p>hi</p>
+      <p className="text-slate-700">hi</p>
+      <div className={`flex h-screen w-screen items-center justify-center bg-bgColor text-textColor`}>
+        <div className="rounded-md bg-bgColor p-8 text-textColor">
+          <ThemeToggleSwitch />
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
