@@ -1,21 +1,24 @@
-import ThemeToggleSwitch from "./ThemeToggleSwitch";
+import { BiCircle, BiSolidConfused, BiSolidHappy } from "react-icons/bi";
+import MainLayout from "./Layouts/MainLayout";
 
 
 function App() {
 
-
   return (
-    <>
+    <MainLayout>
       <p className="color-primary">lab2</p>
       <p className="bg-skin-fill">lab2</p>
-      <p>hi</p>
-      <p className="text-slate-700">hi</p>
-      <div className={`flex h-screen w-screen items-center justify-center bg-bgColor text-textColor`}>
-        <div className="rounded-md bg-bgColor p-8 text-textColor">
-          <ThemeToggleSwitch />
-        </div>
+
+      <p>test-very wide content</p>
+
+      <div className="text-6xl">
+        <h1>test content</h1>
       </div>
-    </>
+      <div>
+        <BiSolidHappy size={"6em"} />
+      </div>
+
+    </MainLayout>
   )
 }
 

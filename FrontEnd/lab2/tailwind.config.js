@@ -12,8 +12,9 @@ export default {
 
       textColor: {
         skin: {
-          base: 'var(--textColor)',
-          base2: 'var(--color-text-base)'
+          base: 'var(--color-text-base)',
+          muted: 'var(--color-text-base)',
+          inverted: 'var(--color-text-base)'
         }
       },
       backgroundColor: {

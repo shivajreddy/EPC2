@@ -22,7 +22,7 @@ const ThemeSwitchButton = (props: IThemeSwitchButtonProps) => {
   )
 }
 
-function ThemeToggleSwitch() {
+function ThemeToggleSwitch({ isOpen }: boolean) {
   const [activeButton, setActiveButton] = useState<number>();
 
   // ! consume the context
@@ -49,14 +49,34 @@ function ThemeToggleSwitch() {
   }, [theme])
 
   return (
-    <>
-      <p>{theme.value}</p>
-      <div className="tri-state-toggle">
-        <ThemeSwitchButton id={1} handleClick={handleClick} active={activeButton === 1 ? true : false} icon={<BiSun size={"1.5em"} />} />
-        <ThemeSwitchButton id={2} handleClick={handleClick} active={activeButton === 2 ? true : false} icon={<WiMoonAltWaningCrescent4 size={"1.5em"} />} />
-        <ThemeSwitchButton id={3} handleClick={handleClick} active={activeButton === 3 ? true : false} icon={<BiSolidMoon size={"1.5em"} />} />
-      </div>
-    </>
+    <div className="tri-state-toggle">
+      {
+        isOpen &&
+        <>
+          <div className="text-black-200">
+            <ThemeSwitchButton id={1} handleClick={handleClick} active={activeButton === 1 ? true : false} icon={<BiSun size={"1.5em"} />} />
+          </div>
+          <div className="text-red-200">
+            <ThemeSwitchButton id={2} handleClick={handleClick} active={activeButton === 2 ? true : false} icon={<WiMoonAltWaningCrescent4 size={"1.5em"} />} />
+          </div>
+          <div className="text-white">
+            <ThemeSwitchButton id={3} handleClick={handleClick} active={activeButton === 3 ? true : false} icon={<BiSolidMoon size={"1.5em"} />} />
+          </div>
+        </>
+      }
+      {
+        !isOpen && (activeButton === 1) &&
+        <p>1</p>
+      }
+      {
+        !isOpen && (activeButton === 2) &&
+        <p>2</p>
+      }
+      {
+        !isOpen && (activeButton === 3) &&
+        <p>3</p>
+      }
+    </div>
   )
 }
 

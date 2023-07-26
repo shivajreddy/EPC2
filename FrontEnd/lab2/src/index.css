@@ -4,27 +4,18 @@
 
 
 @layer utilities {
-  /* p {
-    @apply bg-skin-fill text-skin-base
-  }
-
-  div {
-    @apply bg-skin-fill text-skin-base
-  } */
-
   /* * {
-    @apply bg-skin-fill text-skin-base
+    @apply text-skin-base
   } */
 }
 
-/*
-background-color: "var(--bgColor)";
-*/
-
-
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  color: var(--color-text-base);
+  background-color: var(--color-bg-base);
 }
 
 @layer base {
@@ -39,24 +30,44 @@ background-color: "var(--bgColor)";
   }
 }
 
-.theme-dark {
-  --bgColor: #333333;
-  --textColor: #ffffff;
-
-  --color-text-base: #ffffff;
-}
-
 .theme-light {
-  --bgColor: #84c2ee;
-  --textColor: rgb(1, 1, 1);
+  --color-text-base: #00072d;
+  --color-text-muted: #ffffff;
+  --color-text-inverted: #ffffff;
 
-  --color-text-base: #9c0909;
-
+  --color-bg-base: #F0F5F9;
+  --color-bg-mutued: #4E4FEB;
+  --color-bg-inverted: #4E4FEB;
 }
+
+.theme-dark {
+  --color-text-base: #F0F5F9;
+  --color-text-muted: #F0F5F9;
+  --color-text-inverted: #F0F5F9;
+
+  --color-bg-base: #00072d;
+  --color-bg-mutued: #4E4FEB;
+  --color-bg-inverted: #4E4FEB;
+}
+
 
 .theme-warm {
-  --bgColor: #ae9c42;
-  --textColor: #893535;
+  --color-text-base: #F0F5F9;
+  --color-text-muted: #F0F5F9;
+  --color-text-inverted: #F0F5F9;
 
-  --color-text-base: #710082;
+  --color-bg-base: #00072d;
+  --color-bg-mutued: #4E4FEB;
+  --color-bg-inverted: #4E4FEB;
 }
+
+/* ! Note on colors
+
+These are some areas that i should design colors for:
+
+1. backgrounds -> primary, secondary, active, in-active
+2. outlines - for elemetns that have outlines, such as main-sidebar
+3. borders
+4. drop shadows -> box-shadows, other types of shadows
+
+*/

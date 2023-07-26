@@ -1,0 +1,71 @@
+.main-sidebar {
+  --is-open-width: 16vw;
+  --is-closed-width: 2.5vw;
+
+  position: relative;
+  height: 100vh;
+
+
+  transition: all 0.5s ease;
+
+  --shadow-color: 0deg 0% 0%;
+
+  background-color: var(--bg-color-primary);
+  /* border: 1px solid rosybrown; */
+
+
+}
+
+.main-sidebar.open {
+  width: var(--is-open-width);
+  box-shadow:
+    0.4px 0px 0.6px hsl(var(--shadow-color) / 0.02),
+    1.7px 0.1px 2.4px -0.1px hsl(var(--shadow-color) / 0.06),
+    3.1px 0.1px 4.4px -0.3px hsl(var(--shadow-color) / 0.09),
+    5.4px 0.2px 7.7px -0.4px hsl(var(--shadow-color) / 0.12),
+    9.5px 0.3px 13.5px -0.5px hsl(var(--shadow-color) / 0.15);
+  ;
+}
+
+.main-sidebar.closed {
+  /* border-right: 1px solid slategray; */
+  width: var(--is-closed-width);
+  box-shadow:
+    0.4px 0px 0.6px hsl(var(--shadow-color) / 0.03),
+    0.9px 0px 1.3px -0.3px hsl(var(--shadow-color) / 0.09),
+    1.9px 0.1px 2.7px -0.5px hsl(var(--shadow-color) / 0.16);
+  ;
+}
+
+.main-sidebar-content {
+  margin: 1em;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar-toggle-icon {
+  margin-top: 1em;
+  margin-bottom: 3em;
+}
+
+
+
+#sidebar-toggle-icon>button {
+  position: absolute;
+  right: -14px;
+  /* right: -50%; */
+
+  background-color: white;
+
+  /* border: 1px solid slategray; */
+
+  /* box-shadow: 0px 0px 4px; */
+
+  border-radius: 50%;
+  box-shadow:
+    -0.3px 0.1px 0.5px hsl(var(--shadow-color) / 0),
+    -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33);
+  ;
+
+}
