@@ -19,7 +19,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   // There is no theme-preference locally
   useEffect(() => {
     const currentLocalThemeValue = GetFromLS(userPreferedThemeKeyInLS)
-    console.log("currentLocalThemeValue=", currentLocalThemeValue);
+    // console.log("currentLocalThemeValue=", currentLocalThemeValue);
 
     if (currentLocalThemeValue === null) {
       setTheme(defaultProjectTheme)

@@ -11,7 +11,7 @@ interface ISideBarItem {
   name: string,
   link: string,
   icon: ReactNode,
-  isExpanded: boolean
+  isExpanded: boolean,
 }
 type ISideBarItems = ISideBarItem[];
 
@@ -25,23 +25,65 @@ const SideBarItems: ISideBarItems = [
   {
     name: "item2",
     link: "link2",
-    icon: "icon2",
+    icon: <GoHomeFill />,
     isExpanded: true
-  }
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
+  {
+    name: "item2",
+    link: "link2",
+    icon: "icon2",
+    icon: <GoHomeFill />,
+    isExpanded: true
+  },
 ]
+
 
 const SideBarItem = ({ ...props }: ISideBarItem) => {
   return (
     <div className={"sidebar-item flex border-2 border-s-teal-300"}>
       {props.icon}
-      <button className={`${props.isExpanded ? "" : "hidden"}`}>{props.name}</button>
+      <button className={`${props.isExpanded ? "" : "hidden"}`}>
+        {props.isExpanded &&
+          <p>{props.name}</p>
+        }
+      </button>
     </div>
   )
 }
 
 function SideBar() {
 
-  const [isOpen, setIsOpen] = useState<boolean>(true);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
   const testItem = SideBarItems[0];
   testItem.isExpanded = isOpen
@@ -58,29 +100,35 @@ function SideBar() {
           <br />
         </div>
 
-        {/* logo */}
-        <div className="site-logo flex justify-center items-center">
-          <FaReact size={"3em"} />
-          {isOpen &&
-            <h1>TBD</h1>
-          }
+        <div className="site-logo">
+          <div className="site-logo flex justify-center items-center">
+            <FaReact size={"3em"} />
+            {isOpen &&
+              <h1>TBD</h1>
+            }
+          </div>
         </div>
 
-        <div className="main-sidebar-items">
-          <SideBarItem {...testItem} />
-          id</div>
-
-        <div>
-          <ThemeToggleSwitch isOpen={isOpen} />
+        <div className="main-sidebar-body">
+          <div className="main-sidebar-items">
+            {
+              SideBarItems.map((item, index) => (
+                <SideBarItem name={item.name} icon={item.icon} link={item.link} isExpanded={isOpen} key={index} />
+              ))
+            }
+          </div>
+          <div id="theme-switcher">
+            <ThemeToggleSwitch isOpen={isOpen} />
+          </div>
         </div>
 
         <div className="sidebar-footer">
-          <div className="flex justify-center">
+          <div id="sidebar-foot-logo" className="flex justify-center">
             {isOpen &&
-              <img src={eagleLogoFull} width="100px" />
+              <img src={eagleLogoFull} width="120px" />
             }
             {!isOpen &&
-              <img src={eagleLogoIcon} />
+              <img src={eagleLogoIcon} width="40px" />
             }
           </div>
         </div>

@@ -1,19 +1,21 @@
 .main-sidebar {
-  --is-open-width: 16vw;
-  --is-closed-width: 2.5vw;
+  --is-open-width: 20em;
+  --is-closed-width: 4em;
+
+  --content-margin: 1em;
+  --content-top-margin: 4em;
+  --content-bottom-margin: 4em;
+  --content-colsed-top-margin: 4em;
 
   position: relative;
-  height: 100vh;
 
+  transition: all 0.3s ease;
 
-  transition: all 0.5s ease;
 
   --shadow-color: 0deg 0% 0%;
 
   background-color: var(--bg-color-primary);
   /* border: 1px solid rosybrown; */
-
-
 }
 
 .main-sidebar.open {
@@ -24,7 +26,6 @@
     3.1px 0.1px 4.4px -0.3px hsl(var(--shadow-color) / 0.09),
     5.4px 0.2px 7.7px -0.4px hsl(var(--shadow-color) / 0.12),
     9.5px 0.3px 13.5px -0.5px hsl(var(--shadow-color) / 0.15);
-  ;
 }
 
 .main-sidebar.closed {
@@ -34,38 +35,62 @@
     0.4px 0px 0.6px hsl(var(--shadow-color) / 0.03),
     0.9px 0px 1.3px -0.3px hsl(var(--shadow-color) / 0.09),
     1.9px 0.1px 2.7px -0.5px hsl(var(--shadow-color) / 0.16);
-  ;
 }
 
+
 .main-sidebar-content {
-  margin: 1em;
+  min-height: calc(100vh - var(--content-top-margin) - var(--content-bottom-margin));
+
+  margin: var(--content-margin);
+  margin-top: var(--content-top-margin);
+  margin-bottom: var(--content-bottom-margin);
+
 
   display: flex;
   flex-direction: column;
+
+  /* border: solid 2px lightsalmon; */
+}
+
+.main-sidebar.closed .main-sidebar-content {
+  margin: 0;
+  margin-top: var(--content-colsed-top-margin);
+  min-height: calc(100vh - var(--content-colsed-top-margin));
 }
 
 #sidebar-toggle-icon {
-  margin-top: 1em;
-  margin-bottom: 3em;
-}
 
-
-
-#sidebar-toggle-icon>button {
   position: absolute;
   right: -14px;
-  /* right: -50%; */
 
-  background-color: white;
-
-  /* border: 1px solid slategray; */
-
-  /* box-shadow: 0px 0px 4px; */
+  margin-top: 5em;
+  margin-bottom: 5em;
 
   border-radius: 50%;
   box-shadow:
     -0.3px 0.1px 0.5px hsl(var(--shadow-color) / 0),
     -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33);
-  ;
+}
 
+.main-sidebar-body {
+
+  min-height: calc(100vh - 20em);
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* border: 2px solid lightgreen; */
+}
+
+#sidebar-foot-logo {
+  margin-top: 4em;
+}
+
+#theme-switcher {
+  position: absolute;
+  bottom: 0;
 }
