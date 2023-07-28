@@ -80,11 +80,9 @@ function SideBar({ sidebarIsOpen, setSidebarIsOpen }: IProps) {
       <div className="main-sidebar-content ">
 
         <div className="main-sidebar-header">
-          <button>
-            <div id="sidebar-toggle-icon" className="outline" onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
-              {sidebarIsOpen ? <HiOutlineX size={"1.5em"} /> : <HiMenu size={"1.5em"} />}
-            </div>
-          </button>
+          <div id="sidebar-toggle-icon" className="outline" onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
+            {sidebarIsOpen ? <HiOutlineX size={"1.5em"} /> : <HiMenu size={"1.5em"} />}
+          </div>
 
           <div id="main-sidebar-site-logo">
             <div className="site-logo flex justify-center items-center">

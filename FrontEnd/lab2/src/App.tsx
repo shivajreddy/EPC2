@@ -1,4 +1,4 @@
-import EPC from "./EPC";
+import EPC from "./EPC2/EPC";
 import MainLayout from "./Layouts/MainLayout/MainLayout";
 
 
