@@ -15,7 +15,13 @@
 
 * {
   color: var(--color-text-base);
-  background-color: var(--color-bg-base);
+  /* TODO
+  fix the below 'background-color' error
+  the content in AG-Grid is in plain <div> elements
+  and when the below ppty is applied, the text which is supposed to be color ppty
+  gets the below ppty as well since its not a text tag rather a plain div tag
+   */
+  /* background-color: var(--color-bg-base); */
 }
 
 @layer base {
@@ -52,11 +58,11 @@
 
 
 .theme-warm {
-  --color-text-base: #F0F5F9;
+  --color-text-base: #1c1e20;
   --color-text-muted: #F0F5F9;
   --color-text-inverted: #F0F5F9;
 
-  --color-bg-base: #00072d;
+  --color-bg-base: #ddd576;
   --color-bg-mutued: #4E4FEB;
   --color-bg-inverted: #4E4FEB;
 }

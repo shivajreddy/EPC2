@@ -61,7 +61,6 @@ const SideBarItems: ISideBarItems = [
   {
     name: "item2",
     link: "link2",
-    icon: "icon2",
     icon: <GoHomeFill />,
     isExpanded: true
   },
@@ -70,7 +69,7 @@ const SideBarItems: ISideBarItems = [
 
 const SideBarItem = ({ ...props }: ISideBarItem) => {
   return (
-    <div className={"sidebar-item flex border-2 border-s-teal-300"}>
+    <div className={"sidebar-item"}>
       {props.icon}
       <button className={`${props.isExpanded ? "" : "hidden"}`}>
         {props.isExpanded &&
@@ -92,19 +91,22 @@ function SideBar() {
     <div className={`main-sidebar ${isOpen ? "open" : "closed"}`}>
       <div className="main-sidebar-content ">
 
-        <div id="sidebar-toggle-icon">
-          <button onClick={() => setIsOpen(!isOpen)}>
-            {!isOpen && <HiMenu size={"1.4em"} />}
-            {isOpen && <HiOutlineX size={"1.4em"} />}
-          </button>
-          <br />
-        </div>
+        <button>
+          <div id="sidebar-toggle-icon" className="outline" onClick={() => setIsOpen(!isOpen)}>
+            {/* <button onClick={() => setIsOpen(!isOpen)}> */}
+            {!isOpen &&
+              <HiMenu size={"1.5em"} />
+            }
+            {isOpen && <HiOutlineX size={"1.5em"} />}
+            {/* </button> */}
+          </div>
+        </button>
 
         <div className="site-logo">
           <div className="site-logo flex justify-center items-center">
-            <FaReact size={"3em"} />
+            <FaReact size={"2.5em"} style={{ color: "#B3955E" }} />
             {isOpen &&
-              <h1>TBD</h1>
+              <p className="font-semibold text-3xl pl-4">NUCLEUS</p>
             }
           </div>
         </div>

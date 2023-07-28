@@ -62,15 +62,30 @@
 
   position: absolute;
   right: -14px;
+  top: 10em;
 
-  margin-top: 5em;
-  margin-bottom: 5em;
+
+  padding: 5px;
+
+  z-index: 20;
+
+  /* cursor: pointer; */
+
+  /* margin-top: 5em; */
+  /* margin-bottom: 5em; */
 
   border-radius: 50%;
-  box-shadow:
+  outline: 1px solid gray;
+
+  background: white;
+
+  /* box-shadow:
     -0.3px 0.1px 0.5px hsl(var(--shadow-color) / 0),
-    -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33);
+    -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33); */
+
+  /* border: solid 1px black; */
 }
+
 
 .main-sidebar-body {
 
@@ -93,4 +108,8 @@
 #theme-switcher {
   position: absolute;
   bottom: 0;
+}
+
+.sidebar-item {
+  display: flex;
 }
