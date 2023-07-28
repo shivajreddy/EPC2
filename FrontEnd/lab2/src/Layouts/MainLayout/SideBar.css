@@ -1,19 +1,18 @@
+/* Main-Sidebar -> START -------------------------------*/
 .main-sidebar {
-
-
   --content-margin: 1em;
-  --content-top-margin: 4em;
-  --content-bottom-margin: 4em;
-  --content-colsed-top-margin: 4em;
-
-  position: relative;
-
-  transition: all 0.3s ease;
-
+  --content-top-margin: 2em;
+  --content-bottom-margin: 2em;
+  --content-colsed-top-margin: 2em;
+  --main-sidebar-header-height: 8em;
+  --main-sidebar-footer-height: 8em;
 
   --shadow-color: 0deg 0% 0%;
 
-  background-color: var(--bg-color-primary);
+  position: relative;
+
+  transition: all 0.3s ease-in-out;
+
   /* border: 1px solid rosybrown; */
 }
 
@@ -28,7 +27,6 @@
 }
 
 .main-sidebar.closed {
-  /* border-right: 1px solid slategray; */
   width: var(--sidebar-is-closed-width);
   box-shadow:
     0.4px 0px 0.6px hsl(var(--shadow-color) / 0.03),
@@ -36,7 +34,9 @@
     1.9px 0.1px 2.7px -0.5px hsl(var(--shadow-color) / 0.16);
 }
 
+/* Main-Sidebar -> END ----------------------------------*/
 
+/* Main-Sidebar-Content -> START -----------------------*/
 .main-sidebar-content {
   min-height: calc(100vh - var(--content-top-margin) - var(--content-bottom-margin));
 
@@ -53,8 +53,21 @@
 
 .main-sidebar.closed .main-sidebar-content {
   margin: 0;
-  margin-top: var(--content-colsed-top-margin);
-  min-height: calc(100vh - var(--content-colsed-top-margin));
+  margin-top: var(--content-top-margin);
+  min-height: calc(100vh - var(--content-top-margin));
+}
+
+/* Main-Sidebar-Content -> END -----------------------*/
+
+/* Main-Sidebar-Header -> START -------------------------*/
+.main-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: var(--main-sidebar-header-height);
+
+  /* border: solid 2px black; */
 }
 
 #sidebar-toggle-icon {
@@ -63,21 +76,14 @@
   right: -14px;
   top: 10em;
 
-
-  padding: 5px;
+  padding: 2px;
 
   z-index: 20;
-
-  /* cursor: pointer; */
-
-  /* margin-top: 5em; */
-  /* margin-bottom: 5em; */
 
   border-radius: 50%;
   outline: 1px solid gray;
 
   background: white;
-
 
   /* border: solid 1px black; */
 }
@@ -89,10 +95,13 @@
   transition: all 0.1s ease;
 }
 
+/* Main-Sidebar-Header -> END -------------------------*/
 
+
+/* Main-Sidebar-Body -> START -------------------------*/
 .main-sidebar-body {
 
-  min-height: calc(100vh - 20em);
+  height: calc(100vh - var(--main-sidebar-header-height) - var(--main-sidebar-footer-height) - var(--content-top-margin) - var(--content-bottom-margin));
 
   position: relative;
 
@@ -101,18 +110,89 @@
   justify-content: center;
   align-items: center;
 
+
+  /* border-top: 2px solid black; */
+  /* border-bottom: 2px solid black; */
+
   /* border: 2px solid lightgreen; */
 }
 
-#sidebar-foot-logo {
-  margin-top: 4em;
-}
-
-#theme-switcher {
-  position: absolute;
-  bottom: 0;
-}
-
-.sidebar-item {
+.main-sidebar-link {
   display: flex;
+  align-items: center;
+
+  padding-top: 15px;
+  padding-bottom: 16px;
+
+  /* border: solid 2px lightsalmon; */
 }
+
+#main-sidebar-user {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 5em;
+
+  padding: 1em;
+
+  /* border: 2px solid black; */
+}
+
+.user-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1em;
+}
+
+
+/* Main-Sidebar-Body -> END-------------------------*/
+
+
+
+/* Main-Sidebar-Footer -> START -------------------------*/
+.main-sidebar-footer {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  height: var(--main-sidebar-footer-height);
+
+  /* border: 2px solid black; */
+}
+
+.main-sidebar-footer-logos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0.6;
+
+  /* border: solid 2px red; */
+}
+
+#main-sidebar-footer-tec-logo.closed {
+  width: 40px;
+}
+
+#main-sidebar-footer-tec-logo.open {
+  width: 60px;
+}
+
+#main-sidebar-footer-eagle-logo.closed {
+  width: 40px;
+}
+
+#main-sidebar-footer-eagle-logo.open {
+  width: 120px;
+}
+
+
+
+/* Main-Sidebar-Footer -> END -------------------------*/

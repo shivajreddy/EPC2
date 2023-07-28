@@ -24,11 +24,9 @@ const EPC = () => {
   return (
     <>
       <div className="epc-view-home">
+        <h1 className="text-2xl text-center font-bold">EPC 2.0</h1>
 
-
-        <h1>EPC 2.0</h1>
-
-        <div className="ag-theme-alpine" style={{ width: "40vw", height: "50vh" }} >
+        <div id="epc-ag-grid-home" className="ag-theme-alpine" >
           <AgGridReact
             rowData={rowData}
             columnDefs={columnDefs}

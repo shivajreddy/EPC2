@@ -1,5 +1,5 @@
 import { ReactNode, useContext, useEffect, useState } from "react";
-import { ThemeContext } from "./contexts"
+import { ThemeContext } from "../../contexts";
 import { IThemeOptions, ThemeContextInterface } from "./types"
 import "./ThemeToggleSwitch.css"
 import { BiSun, BiSolidMoon } from 'react-icons/bi'
