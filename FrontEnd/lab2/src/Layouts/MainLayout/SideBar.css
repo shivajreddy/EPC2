@@ -1,6 +1,5 @@
 .main-sidebar {
-  --is-open-width: 20em;
-  --is-closed-width: 4em;
+
 
   --content-margin: 1em;
   --content-top-margin: 4em;
@@ -19,7 +18,7 @@
 }
 
 .main-sidebar.open {
-  width: var(--is-open-width);
+  width: var(--sidebar-is-open-width);
   box-shadow:
     0.4px 0px 0.6px hsl(var(--shadow-color) / 0.02),
     1.7px 0.1px 2.4px -0.1px hsl(var(--shadow-color) / 0.06),
@@ -30,7 +29,7 @@
 
 .main-sidebar.closed {
   /* border-right: 1px solid slategray; */
-  width: var(--is-closed-width);
+  width: var(--sidebar-is-closed-width);
   box-shadow:
     0.4px 0px 0.6px hsl(var(--shadow-color) / 0.03),
     0.9px 0px 1.3px -0.3px hsl(var(--shadow-color) / 0.09),
@@ -79,11 +78,15 @@
 
   background: white;
 
-  /* box-shadow:
-    -0.3px 0.1px 0.5px hsl(var(--shadow-color) / 0),
-    -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33); */
 
   /* border: solid 1px black; */
+}
+
+#sidebar-toggle-icon:hover {
+  box-shadow:
+    -0.3px 0.1px 0.5px hsl(var(--shadow-color) / 0),
+    -7.4px 1.4px 11.3px hsl(var(--shadow-color) / 0.33);
+  transition: all 0.1s ease;
 }
 
 

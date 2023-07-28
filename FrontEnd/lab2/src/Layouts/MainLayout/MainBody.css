@@ -1,0 +1,21 @@
+.main-body {
+
+  margin: var(--main-body-margin-all);
+
+  min-height: calc(100vh - calc(2 * var(--main-body-margin-all)));
+
+  position: relative;
+
+
+  /* min-width: calc(100vw - var(--margin-all) - var(--is-closed-width)); */
+
+  border: 1px solid lightseagreen;
+}
+
+.main-body.sidebar-open {
+  min-width: calc(100vw - var(--sidebar-is-open-width));
+}
+
+.main-body.sidebar-closed {
+  min-width: calc(100vw - var(--sidebar-is-closed-width));
+}

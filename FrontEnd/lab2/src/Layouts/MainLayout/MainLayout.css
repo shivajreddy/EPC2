@@ -1,0 +1,10 @@
+.main-layout {
+
+  /* Variables for Main-body, Side-bar */
+  --sidebar-is-open-width: 20em;
+  --sidebar-is-closed-width: 4em;
+
+  --main-body-margin-all: 1em;
+
+  display: flex;
+}

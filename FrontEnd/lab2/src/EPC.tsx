@@ -1,10 +1,10 @@
 import "./EPC.css"
 
 import { useState } from "react";
-import { AgGridReact } from "ag-grid-react";
 
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
+import { AgGridReact } from "ag-grid-react";
 
 
 const EPC = () => {
@@ -23,17 +23,21 @@ const EPC = () => {
 
   return (
     <>
+      <div className="epc-view-home">
 
 
-      <div className="ag-theme-alpine" style={{ height: 400, width: 600 }}>
-        <AgGridReact
-          rowData={rowData}
-          columnDefs={columnDefs}
-        >
-        </AgGridReact>
+        <h1>EPC 2.0</h1>
+
+        <div className="ag-theme-alpine" style={{ width: "40vw", height: "50vh" }} >
+          <AgGridReact
+            rowData={rowData}
+            columnDefs={columnDefs}
+          >
+          </AgGridReact>
+        </div>
+
 
       </div>
-
 
     </>
   );
