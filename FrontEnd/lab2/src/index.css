@@ -3,77 +3,82 @@
 @tailwind utilities;
 
 
-@layer utilities {
-  /* * {
-    @apply text-skin-base
-  } */
-}
-
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-}
-
 * {
-  color: var(--color-text-base);
-  /* TODO
-  fix the below 'background-color' error
-  the content in AG-Grid is in plain <div> elements
-  and when the below ppty is applied, the text which is supposed to be color ppty
-  gets the below ppty as well since its not a text tag rather a plain div tag
-   */
-  /* background-color: var(--color-bg-base); */
+  font-family: 'Inter', sans-serif;
 }
 
 @layer base {
   :root {
-    --color-text-base: 255, 255, 255;
-    --color-text-muted: 199, 210, 254;
-    --color-text-inverted: 79, 70, 229;
-    --color-fill: 67, 56, 202;
-    --color-button-accent: 255, 255, 255;
-    --color-button-accent-hover: 238, 242, 255;
-    --color-button-muted: 99, 102, 241;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --ring: 215 20.2% 65.1%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 217.2 32.6% 17.5%;
   }
 }
 
-.theme-light {
-  --color-text-base: #00072d;
-  --color-text-muted: #ffffff;
-  --color-text-inverted: #ffffff;
+@layer base {
+  * {
+    @apply border-border;
+  }
 
-  --color-bg-base: #F0F5F9;
-  --color-bg-mutued: #4E4FEB;
-  --color-bg-inverted: #4E4FEB;
+  body {
+    @apply bg-background text-foreground;
+  }
 }
-
-.theme-dark {
-  --color-text-base: #F0F5F9;
-  --color-text-muted: #F0F5F9;
-  --color-text-inverted: #F0F5F9;
-
-  --color-bg-base: #00072d;
-  --color-bg-mutued: #4E4FEB;
-  --color-bg-inverted: #4E4FEB;
-}
-
-
-.theme-warm {
-  --color-text-base: #1c1e20;
-  --color-text-muted: #F0F5F9;
-  --color-text-inverted: #F0F5F9;
-
-  --color-bg-base: #ddd576;
-  --color-bg-mutued: #4E4FEB;
-  --color-bg-inverted: #4E4FEB;
-}
-
-/* ! Note on colors
-
-These are some areas that i should design colors for:
-
-1. backgrounds -> primary, secondary, active, in-active
-2. outlines - for elemetns that have outlines, such as main-sidebar
-3. borders
-4. drop shadows -> box-shadows, other types of shadows
-
-*/

@@ -1,4 +1,4 @@
-/* Main-Sidebar -> START -------------------------------*/
+/* # Main-Sidebar -> START -------------------------------*/
 .main-sidebar {
   --content-margin: 1em;
   --content-top-margin: 2em;
@@ -13,7 +13,7 @@
 
   /* transition: all 0.3s ease-in-out; */
   /* transition-property: width; */
-  transition: width 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 
   /* border: 1px solid rosybrown; */
 }
@@ -70,6 +70,8 @@
   justify-content: center;
 
   height: var(--main-sidebar-header-height);
+
+  transition: all 0.5s ease;
 
   /* border: solid 2px black; */
 }

@@ -1,0 +1,18 @@
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  background-color: #f0f0f0;
+  transition: width 0.3s ease;
+
+  position: absolute;
+  left: 0;
+
+}
+
+.sidebar.sidebar-open {
+  width: 450px;
+}
+
+.body {
+  border: 2px solid red;
+}

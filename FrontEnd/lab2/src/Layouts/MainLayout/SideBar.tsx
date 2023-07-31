@@ -88,7 +88,7 @@ function SideBar({ sidebarIsOpen, setSidebarIsOpen }: IProps) {
             <div className="site-logo flex justify-center items-center">
               <FaReact size={"2.5em"} style={{ color: "#B3955E" }} />
               {sidebarIsOpen &&
-                <p className="font-semibold text-3xl pl-4">NUCLEUS</p>
+                <p className="font-bold text-5xl pl-4">Nexus</p>
               }
             </div>
           </div>
