@@ -6,37 +6,33 @@ import { GoHome } from "react-icons/go"
 import eagleLogoFull from "@assets/images/Eagle Logo B&W.png"
 import eagleLogoIcon from "@assets/images/Eagle Logo Only B&W.png"
 import tecLogo from "@assets/images/TEC_Black_Logo.png"
+import { Link } from "react-router-dom"
 
 const SideBarItems: ISideBarLinks = [
   {
     name: "Home",
-    link: "link2",
+    link: "/",
     icon: <GoHome size={"1.5em"} />,
-    isExpanded: true
   },
   {
     name: "EPC 2.0",
-    link: "link1",
+    link: "/epc",
     icon: <FaRegCircle size={"22px"} />,
-    isExpanded: true
   },
   {
     name: "PipeLine",
-    link: "link2",
+    link: "/pipeline",
     icon: <TbStatusChange size={"1.5em"} />,
-    isExpanded: true
   },
   {
     name: "Tasks",
-    link: "link2",
+    link: "/tasks",
     icon: <RiTodoLine size={"1.5em"} />,
-    isExpanded: true
   },
   {
     name: "Updates",
-    link: "link2",
+    link: "/updates",
     icon: <TbBulb size={"1.6em"} />,
-    isExpanded: true
   },
 ]
 
@@ -57,10 +53,10 @@ function SideBar({ ...props }: IProps) {
       <div className="sidebar-content">
         {
           SideBarItems.map((item, index) => (
-            <a className="sidebar-content-item active" key={item.name}>
+            <Link to={item.link} className="sidebar-content-item" key={item.name}>
               <div className="item-icon">{item.icon}</div>
-              <p className="expand-only">{item.name}</p>
-            </a>
+              <p>{item.name}</p>
+            </Link>
           ))
         }
       </div>

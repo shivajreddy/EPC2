@@ -1,11 +1,11 @@
 import MainLayout from "@/templates/MainLayout"
 
-function Epc() {
+function Updates() {
   return (
     <MainLayout>
-      <h1>EPC 2.0</h1>
+      updates page
     </MainLayout>
   )
 }
 
-export default Epc
+export default Updates

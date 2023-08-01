@@ -1,11 +1,11 @@
 import MainLayout from "@/templates/MainLayout"
 
-function Epc() {
+function Tasks() {
   return (
     <MainLayout>
-      <h1>EPC 2.0</h1>
+      Tasks Page
     </MainLayout>
   )
 }
 
-export default Epc
+export default Tasks

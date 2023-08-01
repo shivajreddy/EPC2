@@ -1,11 +1,11 @@
 import MainLayout from "@/templates/MainLayout"
 
-function Epc() {
+function Pipeline() {
   return (
     <MainLayout>
-      <h1>EPC 2.0</h1>
+      Pipeline Page
     </MainLayout>
   )
 }
 
-export default Epc
+export default Pipeline
