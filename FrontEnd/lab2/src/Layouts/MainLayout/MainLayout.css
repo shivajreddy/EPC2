@@ -9,3 +9,11 @@
   display: flex;
 
 }
+
+.main-layout.sidebar-open {
+  --body-width: calc(100vw - var(--sidebar-is-open-width));
+}
+
+.main-layout.sidebar-closed {
+  --body-width: calc(100vw - var(--sidebar-is-closed-width));
+}

@@ -12,7 +12,7 @@ function MainLayout({ children }: IProps) {
   const [sidebarIsOpen, setSidebarIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="main-layout">
+    <div className={`main-layout ${sidebarIsOpen ? "sidebar-open" : "sidebar-closed"}`} >
       <SideBar sidebarIsOpen={sidebarIsOpen} setSidebarIsOpen={setSidebarIsOpen} />
       <MainBody sidebarIsOpen={sidebarIsOpen}>
         {children}

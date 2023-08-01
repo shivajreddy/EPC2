@@ -6,14 +6,17 @@
 
   position: relative;
 
+  width: var(--body-width);
+
 
   /* border: 3px solid lightseagreen; */
 }
 
+/* 
 .main-body.sidebar-open {
   min-width: calc(100vw - var(--sidebar-is-open-width) - var(--main-body-margin-all) - var(--main-body-margin-all));
 }
 
 .main-body.sidebar-closed {
   min-width: calc(100vw - var(--sidebar-is-closed-width) - var(--main-body-margin-all) - var(--main-body-margin-all));
-}
+} */

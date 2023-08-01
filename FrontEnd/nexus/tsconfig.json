@@ -8,6 +8,9 @@
       "@assets/*": [
         "./src/assets/*"
       ],
+      "@images/*": [
+        "./src/assets/images/*"
+      ],
       "@components/*": [
         "./src/components/*"
       ],
@@ -16,6 +19,15 @@
       ],
       "@pages/*": [
         "./src/pages/*"
+      ],
+      "@context/*": [
+        "./src/context/*"
+      ],
+      "@providers/*": [
+        "./src/providers/*"
+      ],
+      "@hooks/*": [
+        "./src/hooks/*"
       ],
     },
     "target": "ES2020",

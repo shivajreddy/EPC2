@@ -3,8 +3,9 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 
 import '@assets/index.css'
-import HomePage from '@pages/HomePage'
+import HomePage from '@/pages/HomePage/HomePage'
 import Epc from '@pages/Epc/Epc'
+import { ThemeProvider } from './providers'
 
 
 // # Router configuration
@@ -22,6 +23,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>,
 )
