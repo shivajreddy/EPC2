@@ -9,6 +9,7 @@ import { ThemeProvider } from '@providers/ThemeProvider'
 import Updates from '@pages/Updates/Updates'
 import Tasks from '@pages/Tasks/Tasks'
 import Pipeline from '@pages/Pipeline/Pipeline'
+import UserHome from '@pages/User/UserHome'
 
 
 // # Router configuration
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
   {
     path: "updates",
     element: <Updates />
+  },
+  {
+    path: "user",
+    element: <UserHome />
   },
 ])
 

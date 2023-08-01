@@ -12,6 +12,9 @@ body {
   font-family: Inter;
   line-height: 1.5;
   font-weight: 400;
+
+  --animation-duration: 200ms;
+  --animation-timing-curve: ease-in-out;
 }
 
 @tailwind base;

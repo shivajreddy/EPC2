@@ -2,6 +2,7 @@ import "@assets/templates/header.css"
 import { Dispatch, SetStateAction } from "react";
 import { FaCircleUser } from "react-icons/fa6"
 import { IoNotificationsOutline } from "react-icons/io5"
+import { Link } from "react-router-dom";
 
 interface IProps {
   sidebarOpen: boolean;
@@ -34,7 +35,9 @@ function Header({ ...props }: IProps) {
 
       <div className="user-controls">
         <div className="user-notification"><IoNotificationsOutline /></div>
-        <div className="user-avatar"><FaCircleUser width={"100%"} /></div>
+        <Link to="/user" className="user-avatar" >
+          <FaCircleUser />
+        </Link>
       </div>
 
     </header>

@@ -6,6 +6,7 @@ import { GoHome } from "react-icons/go"
 import eagleLogoFull from "@assets/images/Eagle Logo B&W.png"
 import eagleLogoIcon from "@assets/images/Eagle Logo Only B&W.png"
 import tecLogo from "@assets/images/TEC_Black_Logo.png"
+import architectonic from "@assets/images/architectonic-black.png"
 import { Link } from "react-router-dom"
 
 const SideBarItems: ISideBarLinks = [
@@ -15,7 +16,7 @@ const SideBarItems: ISideBarLinks = [
     icon: <GoHome size={"1.5em"} />,
   },
   {
-    name: "EPC 2.0",
+    name: "EPC",
     link: "/epc",
     icon: <FaRegCircle size={"22px"} />,
   },
@@ -62,11 +63,12 @@ function SideBar({ ...props }: IProps) {
       </div>
       <div className="sidebar-footer">
         <div id="sidebar-footer-tec-logo" className="">
-          <img src={tecLogo} />
+          <img src={architectonic} className="expand-only" />
+          <img src={tecLogo} className="contract-only" />
         </div>
         <div id="sidebar-footer-eagle-logo" className="" >
-          <img src={eagleLogoFull} className="" />
-          <img src={eagleLogoIcon} className="" />
+          <img src={eagleLogoFull} className="expand-only" />
+          <img src={eagleLogoIcon} className="contract-only" />
         </div>
       </div>
 
