@@ -49,6 +49,7 @@
 /* # ============== site logo ================= */
 .site-logo>p {
   user-select: none;
+  padding-left: 16px;
 }
 
 /* # ============== menu ================= */
@@ -63,11 +64,14 @@
   justify-content: center;
   align-items: center;
 
+  margin-right: 5rem;
+
   /* border: solid 2px lightblue; */
 }
 
 .user-notification {
   padding: 0 14px;
+  margin-right: 1rem;
 }
 
 .user-notification svg {
@@ -77,11 +81,21 @@
 }
 
 .user-avatar {
-  padding: 0 20px;
+  border-radius: 50%;
+  padding: 6px;
+}
+
+.user-avatar:hover {
+  background-color: var(--lightest-gray);
+}
+
+.user-avatar.active {
+  background-color: lightgray;
+
 }
 
 .user-avatar svg {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
 }

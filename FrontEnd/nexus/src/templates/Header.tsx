@@ -2,7 +2,7 @@ import "@assets/templates/header.css"
 import { Dispatch, SetStateAction } from "react";
 import { FaCircleUser } from "react-icons/fa6"
 import { IoNotificationsOutline } from "react-icons/io5"
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 interface IProps {
   sidebarOpen: boolean;
@@ -27,7 +27,7 @@ function Header({ ...props }: IProps) {
       </button>
 
       <div className="site-logo">
-        <p className="font-bold text-3xl pl-4">Nexus</p>
+        <p className="font-bold text-3xl">Nexus</p>
       </div>
 
       <div className="menu">
@@ -35,9 +35,9 @@ function Header({ ...props }: IProps) {
 
       <div className="user-controls">
         <div className="user-notification"><IoNotificationsOutline /></div>
-        <Link to="/user" className="user-avatar" >
+        <NavLink to="/user" className="user-avatar" >
           <FaCircleUser />
-        </Link>
+        </NavLink>
       </div>
 
     </header>

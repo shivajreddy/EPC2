@@ -7,33 +7,39 @@ import eagleLogoFull from "@assets/images/Eagle Logo B&W.png"
 import eagleLogoIcon from "@assets/images/Eagle Logo Only B&W.png"
 import tecLogo from "@assets/images/TEC_Black_Logo.png"
 import architectonic from "@assets/images/architectonic-black.png"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { Badge } from "@/components/ui/badge"
 
 const SideBarItems: ISideBarLinks = [
   {
     name: "Home",
     link: "/",
     icon: <GoHome size={"1.5em"} />,
+    isBeta: false,
   },
   {
     name: "EPC",
     link: "/epc",
     icon: <FaRegCircle size={"22px"} />,
+    isBeta: true,
   },
   {
     name: "PipeLine",
     link: "/pipeline",
     icon: <TbStatusChange size={"1.5em"} />,
+    isBeta: true,
   },
   {
     name: "Tasks",
     link: "/tasks",
     icon: <RiTodoLine size={"1.5em"} />,
+    isBeta: true,
   },
   {
     name: "Updates",
     link: "/updates",
     icon: <TbBulb size={"1.6em"} />,
+    isBeta: false,
   },
 ]
 
@@ -54,21 +60,26 @@ function SideBar({ ...props }: IProps) {
       <div className="sidebar-content">
         {
           SideBarItems.map((item, index) => (
-            <Link to={item.link} className="sidebar-content-item" key={item.name}>
+            <NavLink to={item.link}
+              className="sidebar-content-item"
+              key={item.name}>
               <div className="item-icon">{item.icon}</div>
-              <p>{item.name}</p>
-            </Link>
+              <p>
+                {item.name}
+                {item.isBeta &&
+                  <Badge className="badge" >Beta</Badge>
+                }
+              </p>
+            </NavLink>
           ))
         }
       </div>
       <div className="sidebar-footer">
         <div id="sidebar-footer-tec-logo" className="">
-          <img src={architectonic} className="expand-only" />
-          <img src={tecLogo} className="contract-only" />
+          <img src={tecLogo} />
         </div>
         <div id="sidebar-footer-eagle-logo" className="" >
-          <img src={eagleLogoFull} className="expand-only" />
-          <img src={eagleLogoIcon} className="contract-only" />
+          <img src={eagleLogoIcon} />
         </div>
       </div>
 

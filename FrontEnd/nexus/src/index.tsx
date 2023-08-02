@@ -10,7 +10,7 @@ import Updates from '@pages/Updates/Updates'
 import Tasks from '@pages/Tasks/Tasks'
 import Pipeline from '@pages/Pipeline/Pipeline'
 import UserHome from '@pages/User/UserHome'
-import DUserPage from '@components/demo-testing/DUserPage'
+import DUserPage from '@/components/demo-testing/Demo1'
 
 
 // # Router configuration
