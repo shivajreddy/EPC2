@@ -21,7 +21,7 @@ function EpcMenu({ ...props }: IProps) {
     <div style={{ position: "absolute", right: "0", bottom: "0" }}>
       <Sheet>
         <SheetTrigger>
-          <button className="rounded-t-lg bg-slate-900 text-white px-3">Menu</button>
+          <div className="rounded-t-lg bg-slate-900 text-white px-3">Menu</div>
         </SheetTrigger>
         <SheetContent className="flex flex-col justify-center items-center">
           <SheetHeader>
@@ -31,7 +31,7 @@ function EpcMenu({ ...props }: IProps) {
             <Button className="w-[10rem]">Download CSV</Button>
             <Popover>
               <PopoverTrigger className="pl-2">
-                <button> <FaInfoCircle size={"1.2rem"} /> </button>
+                <div> <FaInfoCircle size={"1.2rem"} /> </div>
               </PopoverTrigger>
               <PopoverContent>
                 <p> To convert the CSV file into Excel file, Open the CSV file in Excel.  </p>
@@ -52,7 +52,7 @@ function EpcMenu({ ...props }: IProps) {
             <Button className="w-[10rem]">Update: My View</Button>
             <Popover>
               <PopoverTrigger className="pl-2">
-                <button> <FaInfoCircle size={"1.2rem"} /> </button>
+                <div> <FaInfoCircle size={"1.2rem"} /> </div>
               </PopoverTrigger>
               <PopoverContent>
                 <p className="text-sm">Override <b>My View</b> configuration with the
@@ -64,7 +64,7 @@ function EpcMenu({ ...props }: IProps) {
             <Button className="w-[10rem]">Set: My View</Button>
             <Popover>
               <PopoverTrigger className="pl-2">
-                <button> <FaInfoCircle size={"1.2rem"} /> </button>
+                <div> <FaInfoCircle size={"1.2rem"} /> </div>
               </PopoverTrigger>
               <PopoverContent>
                 <p>Change the current view to <b>My&nbsp;View</b> configuration.</p>
@@ -75,7 +75,7 @@ function EpcMenu({ ...props }: IProps) {
             <Button className="w-[10rem]">Set: Default View</Button>
             <Popover>
               <PopoverTrigger className="pl-2">
-                <button> <FaInfoCircle size={"1.2rem"} /> </button>
+                <div> <FaInfoCircle size={"1.2rem"} /> </div>
               </PopoverTrigger>
               <PopoverContent>
                 <p>Change the current view to <b>Default View</b> configuration.</p>

@@ -1,19 +1,74 @@
 import MainLayout from "@/templates/MainLayout"
 import "./demo1.css"
-import Epc from "./Epc"
+
+import { createRoot } from 'react-dom/client';
+import { AgGridReact } from 'ag-grid-react'; // the AG Grid React Component
+
+import 'ag-grid-community/styles/ag-grid.css'; // Core grid CSS, always needed
+import 'ag-grid-community/styles/ag-theme-alpine.css'; // Optional theme CSS
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 
 
 function Demo1() {
+
+  const gridRef = useRef(); // Optional - for accessing Grid's API
+  const [rowData, setRowData] = useState(); // Set rowData to Array of Objects, one Object per Row
+
+  // Each Column Definition results in one Column.
+  const [columnDefs, setColumnDefs] = useState([
+    { field: 'make', filter: true },
+    { field: 'model', filter: true },
+    { field: 'price' }
+  ]);
+
+  // DefaultColDef sets props common to all Columns
+  const defaultColDef = useMemo(() => ({
+    sortable: true
+  }), []);
+
+  // Example of consuming Grid Event
+  const cellClickedListener = useCallback(event => {
+    console.log('cellClicked', event);
+  }, []);
+
+  // Example load data from server
+  useEffect(() => {
+    fetch('https://www.ag-grid.com/example-assets/row-data.json')
+      .then(result => result.json())
+      .then(rowData => setRowData(rowData))
+  }, []);
+
+  // Example using Grid's API
+  const buttonListener = useCallback(e => {
+    gridRef.current.api.deselectAll();
+  }, []);
+
   return (
     <MainLayout>
-      <div className="epc-page">
-        <div className="header">
-          <h1>demo1</h1>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est ab officia pariatur esse eum a, amet sit magnam maxime quasi fugit deserunt distinctio, odit, ea consectetur? Eaque, numquam nobis pariatur ipsa sint dolorum quo, laudantium ab eius officia possimus sequi nesciunt incidunt aut. Facere iste, quia consectetur ullam provident vitae tempora enim natus. Beatae vitae illum omnis nostrum quam dolor nobis mollitia inventore, id numquam voluptatum, sint pariatur magnam impedit. Quae, iusto. Animi, explicabo laborum distinctio maxime voluptatem porro! Suscipit, ad distinctio! Pariatur, natus dolorum. Harum impedit ut accusamus eveniet nam accusantium velit eum iusto, ab, magni est. Blanditiis nulla in cumque error, nisi ab facere aperiam maiores? Perferendis voluptas recusandae architecto asperiores unde sapiente soluta itaque dolores. In quia explicabo maiores corrupti temporibus consequuntur vel ratione, praesentium voluptatibus vero tempora voluptates at beatae, necessitatibus perspiciatis aliquam asperiores fugit rerum laudantium sequi veniam est perferendis molestiae! Quas omnis deleniti nulla ab commodi vitae et at nesciunt illo assumenda facilis doloremque totam veniam adipisci ex quisquam quibusdam amet, dolor cumque quia iusto velit debitis. Ullam autem beatae illo non possimus soluta est at culpa aspernatur, perspiciatis tempore et praesentium alias repudiandae minima odio voluptas itaque ducimus consequuntur aperiam cum debitis doloribus?</p>
+      <div>
+        <h1>Demo-Testing-AgGrid</h1>
+
+        {/* Example using Grid's API */}
+        <button onClick={buttonListener}>Push Me</button>
+
+        {/* On div wrapping Grid a) specify theme CSS Class Class and b) sets Grid size */}
+        <div className="ag-theme-alpine" style={{ width: 620, height: 800 }}>
+
+          <AgGridReact
+            ref={gridRef} // Ref for accessing Grid's API
+
+            rowData={rowData} // Row Data for Rows
+
+            columnDefs={columnDefs} // Column Defs for Columns
+            defaultColDef={defaultColDef} // Default Column Properties
+
+            animateRows={true} // Optional - set to 'true' to have rows animate when sorted
+            rowSelection='multiple' // Options - allows click selection of rows
+
+            onCellClicked={cellClickedListener} // Optional - registering for Grid Event
+          />
         </div>
-
-
 
       </div>
     </MainLayout >

@@ -46,15 +46,15 @@ function UserHome() {
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" type="text" value={defaultName} />
+                  <Input id="name" type="text" defaultValue={defaultName} />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="job-title">Title</Label>
-                  <Input id="job-title" type="text" value={defaultJobTitle} />
+                  <Input id="job-title" type="text" defaultValue={defaultJobTitle} />
                 </div>
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="email">Title</Label>
-                  <Input id="email" type="email" value={defaultEmail} />
+                  <Input id="email" type="email" defaultValue={defaultEmail} />
                 </div>
               </div>
             </CardContent>

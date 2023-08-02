@@ -1,3 +1,17 @@
+/* ! LIST OF THINGS TO IMPLEMENT
+- color the groups
+- Fixed(static) column widths, depending on data-type and name
+- column lines  
+- save options to LS, upon "save view" click
+*/
+
+const columnSettings = {
+  sortable: true,
+  filter: true,
+  resizable: true
+}
+
+
 const columnDefinitions = [
   {
     headerName: 'group-1',
@@ -19,11 +33,11 @@ const columnDefinitions = [
   },
 ]
 
-const columnSettings = {
-  sortable: true,
-  filter: true,
-  resizable: true
+const gridOptions = {
+  columnDefs: columnDefinitions,
+  defaultColDef: columnSettings
 }
+
 
 const rowData = [
   {
@@ -220,19 +234,5 @@ const rowData = [
   },
 ]
 
-const gridOptions = {
-
-  columnDefs: columnDefinitions,
-
-  defaultColDef: columnSettings
-
-}
-/* ! LIST OF THINGS TO IMPLEMENT
-- color the groups
-- Fixed(static) column widths, depending on data-type and name
-- column lines  
-- save options to LS, upon "save view" click
-
-*/
 
 export { columnDefinitions, rowData, gridOptions }

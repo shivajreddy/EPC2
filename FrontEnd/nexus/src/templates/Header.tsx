@@ -1,7 +1,7 @@
+import UserNotifications from "@/features/Notifications/UserNotifications";
 import "@assets/templates/header.css"
 import { Dispatch, SetStateAction } from "react";
 import { FaCircleUser } from "react-icons/fa6"
-import { IoNotificationsOutline } from "react-icons/io5"
 import { NavLink } from "react-router-dom";
 
 interface IProps {
@@ -34,7 +34,9 @@ function Header({ ...props }: IProps) {
       </div>
 
       <div className="user-controls">
-        <div className="user-notification"><IoNotificationsOutline /></div>
+        <div className="user-notification">
+          <UserNotifications />
+        </div>
         <NavLink to="/user" className="user-avatar" >
           <FaCircleUser />
         </NavLink>

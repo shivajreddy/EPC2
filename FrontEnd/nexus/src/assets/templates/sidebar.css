@@ -113,9 +113,12 @@
   border-top: 1px solid lightgray;
 
   margin-bottom: 3rem;
+
+  user-select: none;
 }
 
 .sidebar-footer img {
+  pointer-events: none;
   width: 44px;
   margin: 1rem 0;
   opacity: 0.7;
