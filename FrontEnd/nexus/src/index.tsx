@@ -23,8 +23,8 @@ const router = createBrowserRouter([
   },
   {
     path: "epc",
-    // element: <Epc />
-    element: <DemoEpc />
+    element: <Epc />
+    // element: <DemoEpc />
   },
   {
     path: "pipeline",

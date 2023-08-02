@@ -3,8 +3,6 @@ import { Button } from "@components/ui/button"
 import {
   Card,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
@@ -18,7 +16,9 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Badge } from "@/components/ui/badge"
+
+import '@assets/pages/User/userhome.css'
+
 
 function UserHome() {
 
@@ -30,18 +30,17 @@ function UserHome() {
   return (
 
     <MainLayout>
-      <div className="user-page m-10">
+      <div className="user-page">
         <div className="user-page-header flex items-baseline ml-8">
           <p className="font-extrabold text-6xl">{defaultName},</p>
           <p className="font-bold text-4xl pl-4"> {defaultJobTitle}</p>
         </div>
 
-        <div className="user-page-container flex items-center justify-around py-16">
+        <div className="user-page-container">
 
           <Card className="w-[400px] mx-4">
             <CardHeader>
               <CardTitle>Account Details</CardTitle>
-              {/* <CardDescription>Your Nexus account details</CardDescription> */}
             </CardHeader>
             <CardContent>
               <div className="grid w-full items-center gap-4">

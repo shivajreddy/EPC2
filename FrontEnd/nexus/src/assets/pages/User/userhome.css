@@ -1,0 +1,14 @@
+.user-page {
+
+  margin: 2rem;
+
+  /* border: 2px solid red; */
+}
+
+.user-page-container {
+  display: flex;
+  justify-items: center;
+
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}

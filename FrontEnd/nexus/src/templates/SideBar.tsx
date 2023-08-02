@@ -3,11 +3,9 @@ import { TbStatusChange, TbBulb } from "react-icons/tb"
 import { FaRegCircle } from "react-icons/fa"
 import { RiTodoLine } from "react-icons/ri"
 import { GoHome } from "react-icons/go"
-import eagleLogoFull from "@assets/images/Eagle Logo B&W.png"
 import eagleLogoIcon from "@assets/images/Eagle Logo Only B&W.png"
 import tecLogo from "@assets/images/TEC_Black_Logo.png"
-import architectonic from "@assets/images/architectonic-black.png"
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 
 const SideBarItems: ISideBarLinks = [
@@ -67,7 +65,7 @@ function SideBar({ ...props }: IProps) {
               <div className="item-name">
                 {item.name}
                 {item.isBeta &&
-                  <Badge className="badge" >Beta</Badge>
+                  <Badge className="badge" variant="default" >Beta</Badge>
                 }
               </div>
             </NavLink>
