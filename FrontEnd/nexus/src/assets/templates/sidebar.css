@@ -1,12 +1,13 @@
 /* # ======= Sidebar ======== */
 
+
 .sidebar {
   /* flex-shrink will not allow it to shrink */
   /* will always have the static width that is set */
   flex-shrink: 0;
   overflow: hidden;
 
-  width: 72px;
+  width: var(--sidebar-closed-width);
   height: calc(100vh - var(--header-height));
 
   position: sticky;
@@ -27,7 +28,7 @@
 }
 
 .sidebar.open {
-  width: 240px;
+  width: var(--sidebar-open-width);
 }
 
 
@@ -78,7 +79,7 @@
   height: 24px;
 }
 
-.sidebar-content-item p {
+.sidebar-content-item .item-name {
   font-size: 1.2rem;
   line-height: 2rem;
   font-weight: 500;
@@ -109,7 +110,7 @@
 
   width: 100%;
 
-  border-top: 1px solid gray;
+  border-top: 1px solid lightgray;
 
   margin-bottom: 3rem;
 }

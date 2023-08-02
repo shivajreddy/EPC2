@@ -5,10 +5,11 @@ interface IProps {
   children: ReactNode;
 }
 
-function MainLayoutBody({ children }: IProps) {
+function MainLayoutBody({ ...props }: IProps) {
+
   return (
     <div className="main-layout-body">
-      {children}
+      {props.children}
     </div>
   )
 }

@@ -2,7 +2,7 @@ import "@assets/templates/header.css"
 import { Dispatch, SetStateAction } from "react";
 import { FaCircleUser } from "react-icons/fa6"
 import { IoNotificationsOutline } from "react-icons/io5"
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 interface IProps {
   sidebarOpen: boolean;
@@ -19,7 +19,7 @@ function Header({ ...props }: IProps) {
   }
 
   return (
-    <header className="header">
+    <header className="top-navbar">
       <button
         onClick={handleClick}
         className="sidebar-toggle-btn">

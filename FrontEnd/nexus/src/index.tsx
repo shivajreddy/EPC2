@@ -12,6 +12,8 @@ import Pipeline from '@pages/Pipeline/Pipeline'
 import UserHome from '@pages/User/UserHome'
 import DUserPage from '@/components/demo-testing/Demo1'
 
+// ! Demo imports - delete later
+import { default as DemoEpc } from './components/demo-testing/Epc'
 
 // # Router configuration
 const router = createBrowserRouter([
@@ -21,7 +23,8 @@ const router = createBrowserRouter([
   },
   {
     path: "epc",
-    element: <Epc />
+    // element: <Epc />
+    element: <DemoEpc />
   },
   {
     path: "pipeline",

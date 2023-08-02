@@ -19,7 +19,7 @@ function MainLayout({ children }: IProps) {
 
       <div className="main-layout-container">
         <SideBar sidebarOpen={sidebarOpen}></SideBar>
-        <MainLayoutBody>
+        <MainLayoutBody >
           {children}
         </MainLayoutBody>
       </div>

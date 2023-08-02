@@ -6,6 +6,9 @@
   --dark-gray: rgb(13, 13, 13);
 
   --header-height: 56px;
+
+  --sidebar-closed-width: 72px;
+  --sidebar-open-width: 240px;
 }
 
 .main-layout-container {

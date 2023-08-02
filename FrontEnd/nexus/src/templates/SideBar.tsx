@@ -64,12 +64,12 @@ function SideBar({ ...props }: IProps) {
               className="sidebar-content-item"
               key={item.name}>
               <div className="item-icon">{item.icon}</div>
-              <p>
+              <div className="item-name">
                 {item.name}
                 {item.isBeta &&
                   <Badge className="badge" >Beta</Badge>
                 }
-              </p>
+              </div>
             </NavLink>
           ))
         }
