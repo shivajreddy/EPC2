@@ -1,4 +1,4 @@
-import Header from "@templates/Header"
+import Navbar from "@/templates/Navbar"
 import SideBar from "@templates/SideBar"
 import MainLayoutBody from "@templates/MainLayoutBody"
 import { ReactNode, useState } from "react";
@@ -15,7 +15,7 @@ function MainLayout({ children }: IProps) {
   return (
     <div className="main-layout">
 
-      <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}></Header>
+      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen}></Navbar>
 
       <div className="main-layout-container">
         <SideBar sidebarOpen={sidebarOpen}></SideBar>

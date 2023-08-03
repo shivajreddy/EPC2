@@ -1,8 +1,12 @@
 .user-page {
 
-  margin: 2rem;
+  position: absolute;
+  left: 0;
+  right: 0;
 
-  /* border: 2px solid red; */
+  overflow: hidden;
+
+
 }
 
 .user-page-container {

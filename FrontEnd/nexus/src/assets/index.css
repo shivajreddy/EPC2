@@ -21,8 +21,11 @@ body {
 @tailwind components;
 @tailwind utilities;
 
+/* # ==============   Themes Config ================ # */
 @layer base {
   :root {
+    --b-base-0: #010409;
+
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
 
@@ -55,7 +58,75 @@ body {
     --radius: 0.5rem;
   }
 
-  .dark {
+  .nexus-theme-dark {
+    --bg-base-0: #010409;
+    --bg-base-0-hover: #171B20;
+    --bg-base-1: #0D1117;
+    --bg-base-1-hover: #161b22;
+    --bg-base-2: #30363d;
+    --bg-muted: #;
+    --bg-inverted: #;
+
+    /* #c9d1d9; */
+
+    --fg-base-0: #010409;
+    --fg-base-1: #c9d1d9;
+    --fg-base-2: #30363d;
+    --fg-muted: #8b949e;
+    --fg-inverted: #;
+
+
+    --border-0: #;
+    --border-1: #30363d;
+
+    --shadow-0: #010409;
+    --shadow-1: #010409;
+
+    --primary-0: #010409;
+    --primary-1: #010409;
+    --primary-2: #010409;
+
+    --secondary-0: #010409;
+    --secondary-1: #010409;
+    --secondary-2: #010409;
+
+    --destructive-0: #010409;
+    --destructive-1: #010409;
+    --destructive-2: #010409;
+
+    --background: var(--bg-base-1);
+    --foreground: var(--fg-base-1);
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --card: #0D1117;
+    --card-foreground: 0 0% 98%;
+
+    --border: #21262D;
+    /* --border: 240 3.7% 15.9%; */
+    --input: 240 3.7% 15.9%;
+
+    --primary: 12 17% 89%;
+    /* --primary: 0 0% 98%; */
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+
+    --ring: 240 3.7% 15.9%;
+  }
+
+  .nexus-theme-warm {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
@@ -116,14 +187,16 @@ body {
   }
 }
 
+
+/* # ===================== Scroll bars ======================= */
 ::-webkit-scrollbar {
+  height: 1rem;
   width: 0.5rem;
-  height: 0.5rem;
 }
 
 ::-webkit-scrollbar:horizontal {
   width: 0.5rem;
-  height: 0.5rem;
+  height: 1rem;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
@@ -132,11 +205,14 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.3);
+  --tw-border-opacity: 1;
+  background-color: rgba(217, 217, 227, .8);
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
   border-radius: 9999px;
   border-width: 1px;
 }
 
 ::-webkit-scrollbar-track {
+  background-color: transparent;
   border-radius: 9999px;
 }

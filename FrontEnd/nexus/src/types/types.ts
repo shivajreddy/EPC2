@@ -1,5 +1,5 @@
 interface IThemeOptions {
-  value: "light" | "warm" | "dark"
+  value: "nexus-theme-light" | "nexus-theme-warm" | "nexus-theme-dark"
 }
 
 interface ThemeContextInterface {

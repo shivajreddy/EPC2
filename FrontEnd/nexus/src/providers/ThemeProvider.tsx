@@ -6,10 +6,11 @@ import { IThemeOptions } from "@/types/types";
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
-  const [theme, setTheme] = useState<IThemeOptions>({ value: "light" })
+  const defaultProjectTheme: IThemeOptions = { value: "nexus-theme-light" };
 
-  const defaultProjectTheme: IThemeOptions = { value: "light" };
-  const userPreferedThemeKeyInLS = "preference-theme"
+  const [theme, setTheme] = useState<IThemeOptions>(defaultProjectTheme)
+
+  const userPreferedThemeKeyInLS = "nexus-theme"
 
   const updateTheme = (newTheme: IThemeOptions) => {
     setTheme(newTheme);
@@ -18,20 +19,25 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
 
   // There is no theme-preference locally
   useEffect(() => {
-    const currentLocalThemeValue = GetFromLS(userPreferedThemeKeyInLS)
-    // console.log("currentLocalThemeValue=", currentLocalThemeValue);
+    const currentLocalThemeValue = GetFromLS(userPreferedThemeKeyInLS);
 
-    if (currentLocalThemeValue === null) {
-      setTheme(defaultProjectTheme)
-      SaveToLS(userPreferedThemeKeyInLS, defaultProjectTheme.value)
+    if (
+      currentLocalThemeValue !== null &&
+      (currentLocalThemeValue === "nexus-theme-light" ||
+        currentLocalThemeValue === "nexus-theme-warm" ||
+        currentLocalThemeValue === "nexus-theme-dark")
+    ) {
+      setTheme({ value: currentLocalThemeValue });
     } else {
-      setTheme({ value: currentLocalThemeValue })
+      setTheme(defaultProjectTheme);
+      SaveToLS(userPreferedThemeKeyInLS, defaultProjectTheme.value);
     }
   }, [])
 
+
   useEffect(() => {
-    document.body.classList.remove('theme-light', 'theme-dark', 'theme-warm');
-    document.body.classList.add(`theme-${theme.value}`);
+    document.body.classList.remove('nexus-theme-light', 'nexus-theme-dark', 'nexus-theme-warm');
+    document.body.classList.add(`${theme.value}`);
   }, [theme])
 
   return (

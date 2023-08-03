@@ -1,5 +1,5 @@
 import UserNotifications from "@/features/Notifications/UserNotifications";
-import "@assets/templates/header.css"
+import "@assets/templates/navbar.css"
 import { Dispatch, SetStateAction } from "react";
 import { FaCircleUser } from "react-icons/fa6"
 import { NavLink } from "react-router-dom";
@@ -10,7 +10,7 @@ interface IProps {
 }
 
 
-function Header({ ...props }: IProps) {
+function Navbar({ ...props }: IProps) {
 
   const { sidebarOpen, setSidebarOpen } = props
 
@@ -31,6 +31,7 @@ function Header({ ...props }: IProps) {
       </div>
 
       <div className="menu">
+        {/* menu items here */}
       </div>
 
       <div className="user-controls">
@@ -46,4 +47,4 @@ function Header({ ...props }: IProps) {
   )
 }
 
-export default Header
+export default Navbar

@@ -13,7 +13,7 @@
   position: sticky;
   top: var(--header-height);
 
-  border-right: 1px solid lightgray;
+  border-right: solid 1px var(--border-1);
 
   display: flex;
   flex-direction: column;
@@ -21,6 +21,10 @@
   align-items: center;
 
   padding-top: 1rem;
+
+  user-select: none;
+
+  background: var(--bg-base-0);
 
   transition: width var(--animation-duration) var(--animation-timing-curve);
   /* background-color: aliceblue; */
@@ -55,7 +59,7 @@
 .sidebar-content-item:hover {
   cursor: pointer;
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: var(--bg-base-0-hover);
 }
 
 .sidebar.open .sidebar-content-item {
@@ -64,7 +68,7 @@
 
 .sidebar .sidebar-content-item.active {
   border-radius: 10px;
-  background-color: lightgray;
+  background-color: var(--bg-base-2);
 
   /* outline: 1px solid gray; */
 }
@@ -110,7 +114,6 @@
 
   width: 100%;
 
-  border-top: 1px solid lightgray;
 
   margin-bottom: 3rem;
 

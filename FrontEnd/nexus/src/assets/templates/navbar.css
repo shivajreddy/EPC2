@@ -10,11 +10,12 @@
   position: sticky;
   top: 0;
 
+
   z-index: 20;
 
-  background-color: white;
+  background-color: var(--bg-base-0);
 
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid var(--border-1);
 
   /* background-color: aqua; */
 }
@@ -36,20 +37,21 @@
   padding: 8px;
 
   cursor: pointer;
-  fill: var(--dark-gray);
+  fill: var(--fg-base-1);
 }
 
 .sidebar-toggle-btn:hover {
-  background-color: var(--lightest-gray);
+  background-color: var(--bg-base-0-hover);
 
   border-radius: 50%;
 
-  color: var(--dark-gray);
+  color: var(--fg-base-0);
 }
 
 
 /* # ============== site logo ================= */
 .site-logo>p {
+  color: #FDFCFC;
   user-select: none;
   padding-left: 16px;
 }
@@ -57,6 +59,8 @@
 /* # ============== menu ================= */
 .menu {
   flex-grow: 1;
+
+  margin: 0 4rem;
   /* border: solid 2px lightblue; */
 }
 
@@ -80,7 +84,7 @@
 }
 
 .user-notification:hover {
-  background-color: var(--lightest-gray);
+  background-color: var(--bg-base-0-hover);
 }
 
 .user-notification svg {
@@ -95,11 +99,11 @@
 }
 
 .user-avatar:hover {
-  background-color: var(--lightest-gray);
+  background-color: var(--bg-base-0-hover);
 }
 
 .user-avatar.active {
-  background-color: lightgray;
+  background-color: var(--bg-base-2);
 
 }
 

@@ -8,7 +8,7 @@ import tecLogo from "@assets/images/TEC_Black_Logo.png"
 import { NavLink } from "react-router-dom"
 import { Badge } from "@/components/ui/badge"
 
-const SideBarItems: ISideBarLinks = [
+const SideBarItems = [
   {
     name: "Home",
     link: "/",
@@ -52,7 +52,7 @@ function SideBar({ ...props }: IProps) {
   const sidebarStatus = sidebarOpen ? "open" : "closed"
 
   return (
-    <aside className={`sidebar ${sidebarStatus}`}>
+    <aside className={`sidebar ${sidebarStatus} bg-card`}>
 
       <div className="sidebar-header"> </div>
       <div className="sidebar-content">
