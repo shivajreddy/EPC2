@@ -18,9 +18,22 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 import '@assets/pages/User/userhome.css'
+import { useContext, useState } from "react"
+import { ThemeContext } from "@/context/ThemeContext"
+import { ThemeContextInterface } from "@/types/types"
 
 
 function UserHome() {
+
+  const { theme, updateTheme } = useContext(ThemeContext) as ThemeContextInterface;
+  const mapped_theme_names = {
+    "nexus-theme-light": "Light",
+    "nexus-theme-warm": "Warm",
+    "nexus-theme-dark": "Dark"
+  };
+  const [chosenTheme, setChosenTheme] = useState(mapped_theme_names[theme.value])
+  function handleThemeChange(event) {
+  }
 
   // Request for user details
   const defaultName = "John Doe"
@@ -60,7 +73,6 @@ function UserHome() {
             </CardContent>
           </Card>
 
-
           <Card className="w-[400px] mx-4">
             <CardHeader>
               <CardTitle>Preferences</CardTitle>
@@ -70,17 +82,19 @@ function UserHome() {
               <div className="grid w-full items-center gap-4">
                 <div className="flex flex-col space-y-1.5">
                   <Label htmlFor="framework">Theme</Label>
+
                   <Select>
                     <SelectTrigger id="framework">
-                      <SelectValue placeholder="Select" />
+                      <SelectValue placeholder={chosenTheme} />
                     </SelectTrigger>
                     <SelectContent position="popper">
-                      <SelectItem value="next">Light</SelectItem>
-                      <SelectItem value="astro">Warm</SelectItem>
-                      <SelectItem value="nuxt">Dark</SelectItem>
+                      <SelectItem value="nexus-theme-light">Light</SelectItem>
+                      <SelectItem value="nexus-theme-warm">Warm</SelectItem>
+                      <SelectItem value="nexus-theme-dark">Dark</SelectItem>
                     </SelectContent>
                   </Select>
-                  <Button>Update</Button>
+                  <Button onClick={handleThemeChange}>Update</Button>
+
                 </div>
               </div>
             </CardContent>
