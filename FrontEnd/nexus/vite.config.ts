@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
   plugins: [react()],
@@ -14,7 +14,13 @@ export default defineConfig({
       "@pages": path.resolve(__dirname, "./src/pages"),
       "@context": path.resolve(__dirname, "./src/context"),
       "@providers": path.resolve(__dirname, "./src/providers"),
-      "@hooks": path.resolve(__dirname, "./src/hooks")
-    }
-  }
-})
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+    },
+  },
+  server: {
+    watch: { usePolling: true },
+    host: true,
+    strictPort: true,
+    port: 3000,
+  },
+});
